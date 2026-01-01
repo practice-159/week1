@@ -1,6 +1,7 @@
 // import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import React from "react";
+import { HashRouter } from "react-router-dom";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
@@ -15,24 +16,26 @@ function App() {
   const [selectProduct, setSelectProduct] = useState<productType | null>(null);
 
   return (
-    <div className="container my-5 mx-auto">
-      <div className="row">
-        {/* 左側列表 */}
-        <div className="col-6">
-          <div className="fs-2">產品列表</div>
-          <Table products={products} setSelectProduct={setSelectProduct} />
-        </div>
-        {/* 右側列表 */}
-        <div className="col-6">
-          {selectProduct && (
-            <React.Fragment>
-              <div className="fs-2">商品明細</div>
-              <Card selectProduct={selectProduct} />
-            </React.Fragment>
-          )}
+    <HashRouter>
+      <div className="container my-5 mx-auto">
+        <div className="row">
+          {/* 左側列表 */}
+          <div className="col-6">
+            <div className="fs-2">產品列表</div>
+            <Table products={products} setSelectProduct={setSelectProduct} />
+          </div>
+          {/* 右側列表 */}
+          <div className="col-6">
+            {selectProduct && (
+              <React.Fragment>
+                <div className="fs-2">商品明細</div>
+                <Card selectProduct={selectProduct} />
+              </React.Fragment>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </HashRouter>
   );
 }
 
