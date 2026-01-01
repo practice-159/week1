@@ -1,7 +1,8 @@
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import React from "react";
 
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Card from "./components/Card";
 import Table from "./components/Table";
